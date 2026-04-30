@@ -70,16 +70,9 @@ function isDaytime(hour) { return hour >= 6 && hour < 18; }
 /* ============================
    咖啡馆场景（4天气 × 2时段）
    ============================ */
-const CAFE_MAP = {
-    sunny_day: '晴 昼', sunny_night: '晴 夜',
-    cloudy_day: '阴 昼', cloudy_night: '阴 夜',
-    rainy_day: '雨 昼', rainy_night: '雨 夜',
-    snowy_day: '雪 昼', snowy_night: '雪 夜',
-};
-
 function cafeScene(weather, daytime) {
     const key = weather + (daytime ? '_day' : '_night');
-    const bg = `images/${CAFE_MAP[key]}.webp`;
+    const bg = `images/${key}.webp`;
     return `<img class="scene-bg" src="${bg}">`;
 }
 
