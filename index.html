@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>像素天气</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 信息面板（右上角） -->
+    <div class="info-panel" id="infoPanel">
+        <div class="loading-box">
+            <div class="loading-dots"><span></span><span></span><span></span></div>
+            <p class="loading-text">正在获取天气数据...</p>
+        </div>
+    </div>
+
+    <!-- 天线 -->
+    <div class="tv-antenna">
+        <div class="antenna-ball-l"></div>
+        <div class="antenna-ball-r"></div>
+    </div>
+
+    <!-- 娱乐中心 -->
+    <div class="entertainment-center">
+        <!-- 左音响 -->
+        <div class="speaker speaker-left">
+            <div class="tweeter"></div>
+            <div class="woofer" id="wooferL"></div>
+            <div class="bass-port"></div>
+            <div class="speaker-led" id="ledL"></div>
+        </div>
+
+        <!-- 电视机 -->
+        <div class="tv-set" id="tvSet">
+            <div class="tv-brand">
+                <span class="tv-brand-name">PIXEL <span class="tv-brand-dot"></span> TV</span>
+            </div>
+            <div class="tv-screen">
+                <div class="scene-container" id="sceneContainer"></div>
+            </div>
+            <div class="tv-bottom">
+                <div class="tv-speaker-grille" id="tvGrille"></div>
+                <div class="tv-model">PX-2000</div>
+                <div class="tv-controls">
+                    <div class="tv-knob knob-power hidden" id="refreshBtn" title="刷新天气">
+                        <span class="knob-icon">↻</span>
+                    </div>
+                    <div class="tv-knob knob-channel hidden" id="switchBtn" title="切换频道">
+                        <span class="knob-icon">CH</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右音响 -->
+        <div class="speaker speaker-right">
+            <div class="tweeter"></div>
+            <div class="woofer" id="wooferR"></div>
+            <div class="bass-port"></div>
+            <div class="speaker-led" id="ledR"></div>
+        </div>
+    </div>
+
+    <!-- 底座 -->
+    <div class="tv-stand"></div>
+    <div class="tv-feet">
+        <div class="tv-foot"></div>
+        <div class="tv-foot"></div>
+    </div>
+
+    <!-- ===== 音乐播放器（复古功放） ===== -->
+    <div class="amp-unit" id="ampUnit">
+        <div class="amp-header">
+            <span class="amp-brand">PX-MUSIC iTUNES PREVIEW</span>
+            <div class="amp-power" id="ampPowerToggle">
+                <div class="amp-power-led" id="ampLed"></div>
+                <span>POWER</span>
+            </div>
+        </div>
+
+        <div class="amp-display">
+            <div class="amp-display-text" id="ampDisplay">iTUNES PREVIEW -- 搜索歌曲试听</div>
+        </div>
+
+        <div class="amp-body">
+            <div class="amp-search">
+                <input type="text" id="searchInput" placeholder="搜索歌曲/歌手 (30s试听)" maxlength="40">
+                <button class="amp-search-btn" id="searchBtn">搜索</button>
+            </div>
+            <div class="amp-transport">
+                <button class="transport-btn" id="prevBtn" title="上一首">◀◀</button>
+                <button class="transport-btn play-btn" id="playBtn" title="播放/暂停">▶</button>
+                <button class="transport-btn" id="nextBtn" title="下一首">▶▶</button>
+            </div>
+            <div class="amp-volume">
+                <span class="amp-volume-label">VOL</span>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="60">
+            </div>
+        </div>
+
+        <div class="amp-progress">
+            <span class="progress-time" id="timeCurrent">0:00</span>
+            <div class="progress-bar-wrap" id="progressWrap">
+                <div class="progress-bar-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-time" id="timeTotal">0:00</span>
+        </div>
+
+        <button class="list-toggle" id="listToggle">播放列表 ▼</button>
+        <div class="song-list" id="songList"></div>
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
